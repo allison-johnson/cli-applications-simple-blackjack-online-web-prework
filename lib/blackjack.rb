@@ -47,6 +47,7 @@ def hit?(current_total)
         new_card = deal_card()
         new_total += new_card
         display_card_total(new_total)
+      end #if (inside while)
     end #while
   end #if
   new_total
