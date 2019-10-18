@@ -39,7 +39,15 @@ def hit?(current_total)
     new_total += new_card
     display_card_total(new_total)
   elsif choice != 's'
-    invalid_command()
+    while choice != 's' and choice != 'h' do
+      invalid_command()
+      prompt_user()
+      choice = get_user_input()
+      if choice == 'h'
+        new_card = deal_card()
+        new_total += new_card
+        display_card_total(new_total)
+    end #while
   end #if
   new_total
 end #hit? method
