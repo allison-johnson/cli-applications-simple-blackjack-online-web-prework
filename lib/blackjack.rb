@@ -23,16 +23,25 @@ def end_game(total)
   puts "Sorry, you hit #{total}. Thanks for playing!"
 end
 
-def initial_round
+def initial_round()
   card_1 = deal_card()
   card_2 = deal_card()
   display_card_total(card_1 + card_2)
   card_1 + card_2
 end
 
-def hit?
-  # code hit? here
-end
+def hit?(current_total)
+  prompt_user()
+  choice = get_user_input()
+  if choice == 'h'
+    new_card = deal_card()
+    display_card_total(current_total + new_card)
+  elsif choice != 's'
+    invalid_command()
+  end #if
+  choice
+  
+end #hit? method
 
 def invalid_command
   puts "Please enter a valid command"
